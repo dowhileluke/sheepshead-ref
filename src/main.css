@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+:root {
+	--red: firebrick;
+	--yellow: goldenrod;
+	--green: green;
+	--blue: steelblue;
+	--black: #333;
+}
+
+@layer utilities {
+	.h-screen {
+		height: 100vh;
+		height: -webkit-fill-available;
+	}
+}
+
+@layer components {
+	.flex-center {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
