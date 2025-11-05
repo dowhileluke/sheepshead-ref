@@ -1,5 +1,6 @@
 import { MINOR_RANKING } from '../const'
 import { Card } from './card'
+import { Eyes } from './eyes'
 import { List } from './list'
 import { Section } from './section'
 
@@ -15,6 +16,11 @@ export function Normal() {
                     ))}
                 </List>
             ))}
+            <div className="w-full h-7 flex justify-evenly items-center">
+                <Eyes prefix="A" equals count={11} />
+                <Eyes prefix="10" equals count={10} />
+                <Eyes prefix="K" equals count={4} />
+            </div>
         </Section>
     )
 }
