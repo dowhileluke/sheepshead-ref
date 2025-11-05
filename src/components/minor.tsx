@@ -1,15 +1,16 @@
-import { MINOR_RANKING } from '../const'
+import { MINOR_RANKING, MINOR_EYES } from '../const'
 import { Card } from './card'
 import { List } from './list'
+import { Section } from './section'
 
 export function Minor() {
     return (
-        <section>
+        <Section name="Minor Trump" eyes={25}>
             <List>
-                {MINOR_RANKING.map(i => (
-                    <Card key={i} rank={i} suit={2} />
+                {MINOR_RANKING.map((rank, i) => (
+                    <Card key={rank} rank={rank} suit={2} eyes={MINOR_EYES[i]} />
                 ))}
             </List>
-        </section>
+        </Section>
     )
 }

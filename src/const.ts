@@ -8,6 +8,7 @@ export const FRENCH_RANKS = ['A', 'K', 'Q', 'J', '10', '9', '8', '7']
 export const GERMAN_RANKS = ['A', 'K', 'O', 'U', '10', '9', '8', '7']
 
 export const MINOR_RANKING = [0, 4, 1, 5, 6, 7]
+export const MINOR_EYES = [11, 10, 4, 0, 0, 0]
 
 export const FRENCH_COLORS = ['text-(--black)', 'text-(--black)', 'text-(--red)', 'text-(--red)']
 export const POKER_COLORS = ['text-(--green)', 'text-(--black)', 'text-(--red)', 'text-(--blue)']

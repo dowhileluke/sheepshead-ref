@@ -1,25 +1,28 @@
 import type { ReactNode } from 'react'
 import { useAppState } from '../hooks/use-app-state'
 import { concat } from '../functions/concat';
+import { Eyes } from './eyes';
 
 type CardProps = {
     rank: number;
     suit: number;
+    eyes?: number;
     className?: string;
     children?: ReactNode;
 }
 
 const cardStyle = 'w-[2.25em] h-[3.5em] p-0.5 font-bold bg-white border border-(--black) rounded-sm'
 
-export function Card({ rank, suit, className, children }: CardProps) {
+export function Card({ rank, suit, eyes, className, children }: CardProps) {
     const [{ ranks, suits, colors, }] = useAppState()
     const SuitIcon = suits[suit]
 
     return (
         <li className={concat(cardStyle, colors[suit], className)}>
-            {ranks[rank]}
+            <span className="tracking-[-0.1em]">{ranks[rank]}</span>
             <SuitIcon weight="fill" />
             {children}
+            <Eyes count={eyes} squeeze />
         </li>
     )
 }
