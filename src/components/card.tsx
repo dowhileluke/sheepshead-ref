@@ -11,7 +11,7 @@ type CardProps = {
 
 const cardStyle = 'w-[2.25em] h-[3.5em] p-0.5 flex flex-col font-bold bg-white border border-(--black) rounded-sm'
 
-export function Card({ rank, suit, eyes, className }: CardProps) {
+export function Card({ rank, suit, className }: CardProps) {
     const [{ ranks, suits, colors, }] = useAppState()
     const SuitIcon = suits[suit]
 
