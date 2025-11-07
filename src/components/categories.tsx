@@ -1,11 +1,15 @@
+import { concat } from '../functions/concat'
+import { useAppState } from '../hooks/use-app-state'
 import { Major } from './major'
 import { Minor } from './minor'
 import { Normal } from './normal'
 
 export function Categories() {
+    const [state] = useAppState()
+
     return (
-        <main className="flex-center flex-col gap-2">
-            <section className="flex-center flex-col gap-2">
+        <main className={concat("flex-center gap-x-4 gap-y-2", state.count > 1 ? 'flex-col' : 'flex-wrap')}>
+            <section className={concat("flex-center gap-2 flex-col")}>
                 <Major />
                 <Minor />
             </section>
