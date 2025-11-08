@@ -8,7 +8,7 @@ type EyesProps = {
 }
 
 export function Eyes({ count, prefix, suffix, equals = false }: EyesProps) {
-    if (!count) return null
+    if (typeof count !== 'number') return null
 
     return (
         <span className="text-xs font-normal text-stone-400 flex-center gap-0.5">
