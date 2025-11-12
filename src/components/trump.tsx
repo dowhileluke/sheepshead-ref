@@ -1,11 +1,12 @@
 import { MINOR_RANKING } from '../const'
+import { list } from '../functions/list'
 import { Card } from './card'
 import { List } from './list'
 import { Section } from './section'
 
-const suitIndexes = [0, 1, 2, 3]
+const suitIndexes = list(4)
 
-export function Major() {
+export function Trump() {
     return (
         <Section name="Trump">
             <List>
@@ -14,9 +15,6 @@ export function Major() {
                         <Card key={i} rank={n} suit={i} />
                     ))
                 ))}
-            </List>
-            
-            <List>
                 {MINOR_RANKING.map((rank) => (
                     <Card key={rank} rank={rank} suit={2} />
                 ))}
