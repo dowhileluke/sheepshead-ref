@@ -1,39 +1,37 @@
 import { AcornIcon, BellIcon, ClubIcon, DiamondIcon, HeartStraightIcon, LeafIcon, SpadeIcon } from '@phosphor-icons/react'
-import type { Mode, ModeState } from './types'
+import type { DeckConfig, Deck } from './types'
+import { list } from './functions/list'
 
-export const FRENCH_SUITS = [ClubIcon, SpadeIcon, HeartStraightIcon, DiamondIcon]
-export const GERMAN_SUITS = [AcornIcon, LeafIcon, HeartStraightIcon, BellIcon]
+export const FOUR = list(4)
+export const SIX = list(6)
+export const EIGHT = list(8)
 
-export const FRENCH_RANKS = ['A', 'K', 'Q', 'J', '10', '9', '8', '7']
-export const GERMAN_RANKS = ['A', 'K', 'O', 'U', '10', '9', '8', '7']
+export const EYE_VALUES = [11, 10, 4, 3, 2, 0, 0, 0]
+export const COMMON_RANKING = [3, 4, 0, 1, 2, 5, 6, 7]
+export const WENZ_RANKING = [4, 0, 1, 2, 3, 5, 6, 7]
 
-export const MINOR_RANKING = [0, 4, 1, 5, 6, 7]
-export const MINOR_EYES = [11, 10, 4, 0, 0, 0]
-
-export const FRENCH_COLORS = ['text-(--black)', 'text-(--black)', 'text-(--red)', 'text-(--red)']
-export const POKER_COLORS = ['text-(--green)', 'text-(--black)', 'text-(--red)', 'text-(--blue)']
-export const GERMAN_COLORS = ['text-(--black)', 'text-(--green)', 'text-(--red)', 'text-(--yellow)']
-
-const french: ModeState = {
-    mode: 'french',
-    suits: FRENCH_SUITS,
-    ranks: FRENCH_RANKS,
-    colors: FRENCH_COLORS,
+const french: DeckConfig = {
+    ranks: ['A', '10', 'K', 'Q', 'J', '9', '8', '7'],
+    suits: ['Clubs', 'Spades', 'Hearts', 'Diamonds'],
+    icons: [ClubIcon, SpadeIcon, HeartStraightIcon, DiamondIcon],
+    colors: ['text-(--black)', 'text-(--black)', 'text-(--red)', 'text-(--red)'],
 }
 
-const poker: ModeState = { ...french, mode: 'poker', colors: POKER_COLORS, }
-
-const german: ModeState = {
-    mode: 'german',
-    suits: GERMAN_SUITS,
-    ranks: GERMAN_RANKS,
-    colors: GERMAN_COLORS,
+const german: DeckConfig = {
+    ranks: ['A', '10', 'K', 'O', 'U', '9', '8', '7'],
+    suits: ['Eichel', 'Laub', 'Herz', 'Shellen'],
+    icons: [AcornIcon, LeafIcon, HeartStraightIcon, BellIcon],
+    colors:  ['text-(--black)', 'text-(--green)', 'text-(--red)', 'text-(--yellow)'],
 }
 
-export const MODE_MAP: Record<Mode, ModeState> = {
+const poker: DeckConfig = {
+    ...french,
+    colors: ['text-(--green)', 'text-(--black)', 'text-(--red)', 'text-(--blue)'],
+}
+
+export const DECK_LIST: Deck[] = ['french', 'german', 'poker']
+export const LIBRARY: Record<Deck, DeckConfig> = {
     french,
-    poker,
     german,
+    poker,
 }
-
-export const MODE_LIST: Mode[] = ['french', 'german', 'poker']

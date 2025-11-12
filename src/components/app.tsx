@@ -8,9 +8,7 @@ export function App() {
     return (
         <>
             <main className="flex gap-12">
-                {Array.from({ length: state.count }, (_, i) => (
-                    <Categories key={i} />
-                ))}
+                <Categories />
             </main>
             <Controls />
         </>

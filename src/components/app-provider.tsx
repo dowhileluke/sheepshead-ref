@@ -1,20 +1,32 @@
 import { useState, type Dispatch, type PropsWithChildren, type SetStateAction } from 'react'
 import type { AppActions, AppState } from '../types'
-import { MODE_MAP } from '../const'
 import { AppContext } from '../context'
+import { list } from '../functions/list'
+
+const emptyList = list(6, () => 0)
 
 const initialState: AppState = {
-    ...MODE_MAP.french,
-    count: 1,
+    deck: 'french',
+    trump: 2,
+    copies: emptyList,
 }
 
 function actionFactory(setState: Dispatch<SetStateAction<AppState>>) {
     const result: AppActions = {
-        setMode(mode) {
-            setState(prev => ({ ...prev, ...MODE_MAP[mode], }))
+        setDeck(deck) {
+            setState(prev => ({ ...prev, deck, }))
         },
-        increment() {
-            setState(prev => ({ ...prev, count: prev.count + 1, }))
+        setTrump(trump) {
+            setState(prev => ({ ...prev, trump, }))
+        },
+        increment(index) {
+            setState(prev => ({ ...prev, copies: prev.copies.map((n, i) => i === index ? n + 1 : n) }))
+        },
+        decrement(index) {
+            setState(prev => ({ ...prev, copies: prev.copies.map((n, i) => i === index ? n - 1 : n) }))
+        },
+        reset() {
+            setState(prev => ({ ...prev, copies: emptyList, }))
         },
     }
 
