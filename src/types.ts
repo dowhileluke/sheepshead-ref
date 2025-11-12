@@ -10,13 +10,13 @@ export type DeckConfig = {
 
 export type AppState = {
     deck: Deck;
-    trump: number | null;
+    trump: number | 'z';
     copies: number[];
 }
 
 export type AppActions = {
     setDeck: (deck: Deck) => void;
-    setTrump: (trump: number | null) => void;
+    setTrump: (trump: number | 'z') => void;
     increment: (index: number) => void;
     decrement: (index: number) => void;
     reset: () => void;

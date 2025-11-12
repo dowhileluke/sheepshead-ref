@@ -6,6 +6,8 @@
 	--green: green;
 	--blue: steelblue;
 	--black: #333;
+
+	color: var(--black);
 }
 
 @layer utilities {
