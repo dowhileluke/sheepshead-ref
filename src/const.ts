@@ -19,7 +19,7 @@ const french: DeckConfig = {
 
 const german: DeckConfig = {
     ranks: ['A', '10', 'K', 'O', 'U', '9', '8', '7'],
-    suits: ['Eichel', 'Laub', 'Herz', 'Shellen'],
+    suits: ['Acorns', 'Leaves', 'Hearts', 'Bells'],
     icons: [AcornIcon, LeafIcon, HeartStraightIcon, BellIcon],
     colors:  ['text-(--black)', 'text-(--green)', 'text-(--red)', 'text-(--yellow)'],
 }

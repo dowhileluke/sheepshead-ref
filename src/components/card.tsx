@@ -10,6 +10,8 @@ type CardProps = {
 
 const cardStyle = 'w-[2.25em] h-[3.5em] p-0.5 -me-[0.75em] last:me-0 bg-white border border-(--black) rounded-sm'
 
+export const rankStyle = 'font-bold tracking-[-0.1em]'
+
 export function Card({ rank, suit, className }: CardProps) {
     const isSuited = typeof suit === 'number'
     const [state] = useAppState()
@@ -19,7 +21,7 @@ export function Card({ rank, suit, className }: CardProps) {
     return (
         <li className={concat(cardStyle, isSuited ? colors[suit] : '', className)}>
             <div className="flex flex-col gap-0.5">
-                <span className="font-bold tracking-[-0.1em]">{ranks[rank]}</span>
+                <span className={rankStyle}>{ranks[rank]}</span>
                 {SuitIcon && (<SuitIcon size="0.8em" weight="fill" />)}
             </div>
         </li>
