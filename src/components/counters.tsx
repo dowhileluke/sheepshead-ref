@@ -1,5 +1,5 @@
-import { EyesTable } from "./eyes-table";
-import { Section } from "./section";
+import { EyesTable } from './eyes-table'
+import { Section } from './section'
 
 export function Counters() {
     return (
