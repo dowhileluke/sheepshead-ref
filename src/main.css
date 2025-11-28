@@ -24,3 +24,7 @@
 		align-items: center;
 	}
 }
+
+@utility pb-inset-* {
+	padding-bottom: max(calc(var(--spacing) * --value(integer)), env(safe-area-inset-bottom));
+}

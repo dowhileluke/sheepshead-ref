@@ -1,5 +1,6 @@
 import { FOUR, LIBRARY } from '../const'
 import { useAppState } from '../hooks/use-app-state'
+import { Select } from './select'
 
 function toTrump(s: string) {
     if (s === 'z') return 'z'
@@ -12,11 +13,11 @@ export function TrumpSelect() {
     const { suits } = LIBRARY[state.deck]
 
     return (
-        <select value={state.trump} onChange={(e) => actions.setTrump(toTrump(e.target.value))}>
+        <Select value={state.trump} onChange={(e) => actions.setTrump(toTrump(e.target.value))}>
             {FOUR.map(n => (
                 <option key={n} value={n}>{suits[n]}</option>
             ))}
             <option value="z">Wenz</option>
-        </select>
+        </Select>
     )
 }
