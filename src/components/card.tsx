@@ -1,26 +1,27 @@
 import { useAppState } from '../hooks/use-app-state'
 import { concat } from '../functions/concat'
-// import { Eyes } from './eyes'
+import { LIBRARY } from '../const';
 
 type CardProps = {
     rank: number;
-    suit: number;
-    eyes?: number;
+    suit?: number | null;
     className?: string;
 }
 
-const cardStyle = 'w-[2.25em] h-[3.5em] p-0.5 flex flex-col font-bold bg-white border border-(--black) rounded-sm'
+const cardStyle = 'w-[2.25em] h-[3.5em] p-0.5 -me-[0.75em] last:me-0 bg-white border border-(--black) rounded-sm'
 
 export function Card({ rank, suit, className }: CardProps) {
-    const [{ ranks, suits, colors, }] = useAppState()
-    const SuitIcon = suits[suit]
+    const isSuited = typeof suit === 'number'
+    const [state] = useAppState()
+    const { ranks, icons, colors, } = LIBRARY[state.deck]
+    const SuitIcon = isSuited ? icons[suit] : null
 
     return (
-        <li className={concat(cardStyle, colors[suit], className)}>
-            <span className="tracking-[-0.1em]">{ranks[rank]}</span>
-            <SuitIcon weight="fill" />
-            {/* <div className="grow" /> */}
-            {/* <Eyes count={eyes} squeeze /> */}
+        <li className={concat(cardStyle, isSuited ? colors[suit] : '', className)}>
+            <div className="flex flex-col gap-0.5">
+                <span className="font-bold tracking-[-0.1em]">{ranks[rank]}</span>
+                {SuitIcon && (<SuitIcon size="0.8em" weight="fill" />)}
+            </div>
         </li>
     )
 }
