@@ -13,7 +13,7 @@ export function Section({ name, note, children, ...props }: SectionProps) {
                 <span className="font-bold">{name}</span>
                 {note && (<span>{note}</span>)}
             </h3>
-            <div className="flex gap-2 p-2 border-t border-stone-300 rounded-lg">
+            <div className="flex flex-col items-center gap-2 p-2 border-t border-stone-300 rounded-lg">
                 {children}
             </div>
         </section>
