@@ -15,7 +15,7 @@ export function Section({ name, note, isPlain = false, children, ...props }: Sec
                 {note && (<span>{note}</span>)}
             </h3>
             {isPlain ? children : (
-                <div className="flex flex-col items-center gap-2 p-2 pb-0 border-t border-stone-300 rounded-lg">
+                <div className="p-2 border-t border-stone-300 rounded-lg">
                     {children}
                 </div>
             )}

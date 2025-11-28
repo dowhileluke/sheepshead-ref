@@ -14,18 +14,20 @@ export function Trump() {
 
     return (
         <Section name="Trump">
-            {bowers.map(n => (
-                <List key={n}>
-                    {suitIndexes.map(i => (
-                        <Card rank={n} suit={i} />
-                    ))}
-                </List>
-            ))}
-            {!isWenz && (
-                <List>
-                    <MultiCard suit={trump} />
-                </List>
-            )}
+            <div className="flex-center portrait:flex-col gap-4">
+                {bowers.map(n => (
+                    <List key={n}>
+                        {suitIndexes.map(i => (
+                            <Card rank={n} suit={i} />
+                        ))}
+                    </List>
+                ))}
+                {!isWenz && (
+                    <List>
+                        <MultiCard suit={trump} />
+                    </List>
+                )}
+            </div>
         </Section>
     )
 }
