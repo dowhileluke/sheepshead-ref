@@ -19,8 +19,8 @@
 | 4 | Play | Grand Tourné | Tourné while holding both black Aces. | 2+ | yes | 3
 | 5 | Solo | - | Name any suit for trump. | 0 | yes | 3
 | 6 | Solo | Better | Spades trump. | 0 | yes | 4
-| 6 | Pure Nolo | Pure Nolo | Nolo without exchanging. | 0 | no | 4
-| 7 | Open Nolo | Open Nolo | Pure Nolo with an open hand. | 0 | no | 6
+| 6 | Pure Nolo | - | Nolo without exchanging. | 0 | no | 4
+| 7 | Open Nolo | - | Pure Nolo with an open hand. | 0 | no | 6
 
 Bids of equal rank are won by the player with positional priority.
 
