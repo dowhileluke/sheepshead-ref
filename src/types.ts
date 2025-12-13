@@ -8,16 +8,18 @@ export type DeckConfig = {
     colors: string[];
 }
 
+export type View = 'trump' | 'partner'
 export type AppState = {
     deck: Deck;
     trump: number | 'z';
-    copies: number[];
+    partner: number;
+    view: View;
 }
 
 export type AppActions = {
     setDeck: (deck: Deck) => void;
     setTrump: (trump: number | 'z') => void;
-    increment: (index: number) => void;
-    decrement: (index: number) => void;
+    setPartner: (partner: number) => void;
+    cycleView: () => void;
     reset: () => void;
 }

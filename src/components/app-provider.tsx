@@ -8,7 +8,8 @@ const emptyList = list(6, () => 0)
 const initialState: AppState = {
     deck: 'french',
     trump: 2,
-    copies: emptyList,
+    partner: -1,
+    view: 'trump',
 }
 
 function actionFactory(setState: Dispatch<SetStateAction<AppState>>) {
@@ -19,11 +20,11 @@ function actionFactory(setState: Dispatch<SetStateAction<AppState>>) {
         setTrump(trump) {
             setState(prev => ({ ...prev, trump, }))
         },
-        increment(index) {
-            setState(prev => ({ ...prev, copies: prev.copies.map((n, i) => i === index ? n + 1 : n) }))
+        setPartner(partner) {
+            setState(prev => ({ ...prev, partner, }))
         },
-        decrement(index) {
-            setState(prev => ({ ...prev, copies: prev.copies.map((n, i) => i === index ? n - 1 : n) }))
+        cycleView() {
+            setState(prev => ({ ...prev, view: prev.view === 'trump' ? 'partner' : 'trump', }))
         },
         reset() {
             setState(prev => ({ ...prev, copies: emptyList, }))
