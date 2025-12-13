@@ -1,17 +1,15 @@
 import { FOUR, LIBRARY } from '../const'
 import { concat } from '../functions/concat';
 import { useAppState } from '../hooks/use-app-state';
-import { Label } from './label';
 
 type IconMode = 'sm' | 'lg'
 
 type SuitSelectProps<T> = {
-	name: string;
 	value: T;
 	onChange: (value: T) => void;
 }
 
-export function SuitSelect<T extends number | string>({ name, value, onChange }: SuitSelectProps<T>) {
+export function SuitSelect<T extends number | string>({ value, onChange }: SuitSelectProps<T>) {
 	function handleClick(n: number) {
 		onChange((value === n ? -1: n) as T)
 	}

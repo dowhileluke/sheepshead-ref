@@ -6,8 +6,8 @@ export function PartnerMode() {
 
 	return (
 		<main className="h-full p-4 gap-4 flex-center portrait:flex-col">
-			<SuitSelect name="Trump" value={state.trump} onChange={(v) => actions.setTrump(v === -1 ? 'z' : v)} />
-			<SuitSelect name="Partner" value={state.partner} onChange={actions.setPartner} />
+			<SuitSelect value={state.trump} onChange={(v) => actions.setTrump(v === -1 ? 'z' : v)} />
+			<SuitSelect value={state.partner} onChange={actions.setPartner} />
 		</main>
 	)
 }
