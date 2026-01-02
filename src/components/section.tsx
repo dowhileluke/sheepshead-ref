@@ -8,7 +8,7 @@ type SectionProps = ComponentPropsWithRef<'section'> & {
 
 export function Section({ name, note, isPlain = false, children, ...props }: SectionProps) {
     return (
-        <section {...props} className="flex items-center flex-col gap-2">
+        <section {...props} className="flex items-center flex-col gap-2 relative">
             <h3 className="flex items-baseline gap-2">
                 <span className="font-bold">{name}</span>
                 {typeof note === 'string' ? (<span>{note}</span>) : note}

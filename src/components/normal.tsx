@@ -10,7 +10,7 @@ export function Normal() {
     const { icons, colors, } = LIBRARY[state.deck]
 
     const note = (
-        <span className="flex">
+        <div className="flex-center gap-1 p-1 rounded-full border border-stone-200 backdrop-blur-md">
             {FOUR.map(i => i === state.trump ? null : createElement(
                 icons[i],
                 {
@@ -19,14 +19,17 @@ export function Normal() {
                     size: '0.8em',
                 },
             ))}
-        </span>
+        </div>
     )
 
     return (
-        <Section name="Non-Trump" note={note}>
+        <Section name="Non-Trump">
             <List>
                 <MultiCard />
             </List>
+            <div className="absolute inset-0 top-2/5 flex-center">
+                {note}
+            </div>
         </Section>
     )
 }
