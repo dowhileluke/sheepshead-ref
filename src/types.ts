@@ -21,5 +21,4 @@ export type AppActions = {
     setTrump: (trump: number | 'z') => void;
     setPartner: (partner: number) => void;
     cycleView: () => void;
-    reset: () => void;
 }

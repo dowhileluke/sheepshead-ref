@@ -8,7 +8,7 @@ function toTrump(s: string) {
     return Number(s)
 }
 
-export function TrumpSelect() {
+export function ModeDropdown() {
     const [state, actions] = useAppState()
     const { suits } = LIBRARY[state.deck]
 

@@ -1,7 +1,7 @@
 import { NotePencilIcon } from '@phosphor-icons/react'
 import { DeckSelect } from './deck-select'
 import { Label } from './label'
-import { TrumpSelect } from './trump-select'
+import { ModeDropdown } from './mode-dropdown'
 import { useAppState } from '../hooks/use-app-state'
 
 export function Controls() {
@@ -10,7 +10,7 @@ export function Controls() {
     return (
         <nav className="flex-center gap-4 p-2 pb-inset-4 capitalize">
             <Label name="Mode">
-                <TrumpSelect />
+                <ModeDropdown />
             </Label>
             <Label name="Deck">
                 <DeckSelect />

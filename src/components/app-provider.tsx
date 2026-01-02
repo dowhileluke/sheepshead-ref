@@ -1,9 +1,6 @@
 import { useState, type Dispatch, type PropsWithChildren, type SetStateAction } from 'react'
 import type { AppActions, AppState } from '../types'
 import { AppContext } from '../context'
-import { list } from '../functions/list'
-
-const emptyList = list(6, () => 0)
 
 const initialState: AppState = {
     deck: 'french',
@@ -25,9 +22,6 @@ function actionFactory(setState: Dispatch<SetStateAction<AppState>>) {
         },
         cycleView() {
             setState(prev => ({ ...prev, view: prev.view === 'trump' ? 'partner' : 'trump', }))
-        },
-        reset() {
-            setState(prev => ({ ...prev, copies: emptyList, }))
         },
     }
 
