@@ -7,9 +7,10 @@ type IconMode = 'sm' | 'lg'
 type SuitSelectProps<T> = {
 	value: T;
 	onChange: (value: T) => void;
+	label?: string;
 }
 
-export function SuitSelect<T extends number | string>({ value, onChange }: SuitSelectProps<T>) {
+export function SuitSelect<T extends number | string>({ value, onChange, label }: SuitSelectProps<T>) {
 	function handleClick(n: number) {
 		onChange((value === n ? -1: n) as T)
 	}
@@ -24,6 +25,11 @@ export function SuitSelect<T extends number | string>({ value, onChange }: SuitS
 					mode={n === value ? 'lg' : 'sm'}
 				/>
 			))}
+			{label && (
+				<div className="absolute bottom-0 w-full h-[10%] flex-center">
+					{label}
+				</div>
+			)}
 		</section>
 	)
 }

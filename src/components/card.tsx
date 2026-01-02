@@ -19,7 +19,7 @@ export function Card({ rank, suit, className }: CardProps) {
     const SuitIcon = isSuited ? icons[suit] : null
 
     return (
-        <li className={concat(cardStyle, isSuited ? colors[suit] : '', className)}>
+        <li className={concat(cardStyle, isSuited ? colors[suit] : 'text-stone-500', className)}>
             <div className="flex flex-col gap-0.5">
                 <span className={rankStyle}>{ranks[rank]}</span>
                 {SuitIcon && (<SuitIcon size="0.8em" weight="fill" />)}

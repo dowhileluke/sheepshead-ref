@@ -1,4 +1,4 @@
-import { NotePencilIcon } from '@phosphor-icons/react'
+import { NoteBlankIcon } from '@phosphor-icons/react'
 import { DeckSelect } from './deck-select'
 import { Label } from './label'
 import { ModeDropdown } from './mode-dropdown'
@@ -16,7 +16,7 @@ export function Controls() {
                 <DeckSelect />
             </Label>
             <button type="button" className="cursor-pointer text-stone-400" onClick={cycleView}>
-                <NotePencilIcon />
+                <NoteBlankIcon />
             </button>
         </nav>
     )

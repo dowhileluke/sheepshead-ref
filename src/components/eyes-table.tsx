@@ -25,7 +25,7 @@ export function EyesTable() {
                 </Col>
             ))}
             <Col className="rounded-r-md">
-                <Cell>9 8 7</Cell>
+                <Cell className="px-2">9 &middot; 8 &middot; 7</Cell>
                 <Cell>0</Cell>
             </Col>
         </div>

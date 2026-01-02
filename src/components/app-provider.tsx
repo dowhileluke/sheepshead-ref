@@ -15,13 +15,24 @@ function actionFactory(setState: Dispatch<SetStateAction<AppState>>) {
             setState(prev => ({ ...prev, deck, }))
         },
         setTrump(trump) {
-            setState(prev => ({ ...prev, trump, }))
+            setState(prev => ({
+                ...prev,
+                trump,
+                partner: prev.partner === trump ? -1 : prev.partner,
+            }))
         },
         setPartner(partner) {
-            setState(prev => ({ ...prev, partner, }))
+            setState(prev => ({
+                ...prev,
+                trump: prev.trump === partner ? 'z' : prev.trump,
+                partner,
+            }))
         },
         cycleView() {
-            setState(prev => ({ ...prev, view: prev.view === 'trump' ? 'partner' : 'trump', }))
+            setState(prev => ({
+                ...prev,
+                view: prev.view === 'trump' ? 'partner' : 'trump',
+            }))
         },
     }
 
