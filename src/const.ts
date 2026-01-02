@@ -24,14 +24,20 @@ const german: DeckConfig = {
     colors:  ['text-(--black)', 'text-(--green)', 'text-(--red)', 'text-(--yellow)'],
 }
 
+const hybrid: DeckConfig = {
+    ...french,
+    colors: german.colors,
+}
+
 const poker: DeckConfig = {
     ...french,
     colors: ['text-(--green)', 'text-(--black)', 'text-(--red)', 'text-(--blue)'],
 }
 
-export const DECK_LIST: Deck[] = ['french', 'german', 'poker']
+export const DECK_LIST: Deck[] = ['french', 'german', 'hybrid', 'poker']
 export const LIBRARY: Record<Deck, DeckConfig> = {
     french,
     german,
+    hybrid,
     poker,
 }

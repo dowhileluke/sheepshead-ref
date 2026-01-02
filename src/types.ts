@@ -1,6 +1,6 @@
 import type { Icon } from '@phosphor-icons/react'
 
-export type Deck = 'french' | 'poker' | 'german'
+export type Deck = 'french' | 'poker' | 'german' | 'hybrid'
 export type DeckConfig = {
     ranks: string[];
     suits: string[];

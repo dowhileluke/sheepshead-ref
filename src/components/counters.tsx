@@ -4,7 +4,7 @@ import { Section } from './section'
 
 export function Counters() {
     return (
-        <Section name="Values" isPlain>
+        <Section name="Card Values" isPlain>
             <EyesTable />
             <div className="flex-center text-xs text-stone-400">
                 <span>Goal: Capture more than <strong>60</strong></span>
