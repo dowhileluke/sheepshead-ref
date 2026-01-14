@@ -1,10 +1,9 @@
-import { createElement } from 'react'
+import { DotIcon } from '@phosphor-icons/react'
 import { FOUR, LIBRARY } from '../const'
 import { useAppState } from '../hooks/use-app-state'
 import { List } from './list'
 import { MultiCard } from './multi-card'
 import { Section } from './section'
-import { DotIcon } from '@phosphor-icons/react'
 
 export function Normal() {
     const [state] = useAppState()
